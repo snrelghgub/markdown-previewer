@@ -6,6 +6,10 @@ import Badge from 'react-bootstrap/Badge';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card'; 
 import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { faMarkdown } from '@fortawesome/free-brands-svg-icons';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 //reference instance 
 let marked = require('marked'); 
@@ -28,24 +32,35 @@ class App extends React.Component {
 
   render() {
     return (
-     <div className="App" id="markdown-previewer">
-       
-       {/*<textarea className="form-control" onChange={this.updatePreviewer} value={this.state.markdown} id="editor"/>*/}
-      <Container>
-       <Form.Group>
-        <Form.Label><Badge variant="warning">Editor</Badge></Form.Label>
-        <Form.Control as="textarea" onChange={this.updatePreviewer} value={this.state.markdown} rows="10" id="editor" />
-       </Form.Group>
+      <div className="App" id="markdown-previewer">
 
-       
-        <Badge variant="success">Previewer</Badge>
-        <Card>
-         <Card.Body id="preview">{ReactHtmlParser(marked(this.state.markdown))}</Card.Body>
-        </Card>
-      </Container>
-       {/*<Badge variant="success">Previewer</Badge>
+        <Navbar bg="light" className="d-flex flex-row justify-content-end font-weight-bold" id="navbar">
+              The Online Markdown Previewer 
+              <FontAwesomeIcon icon={faCog} className="fa fa-spin ml-2 mr-2" id="icon"></FontAwesomeIcon>
+        </Navbar>
+
+        {/*<textarea className="form-control" onChange={this.updatePreviewer} value={this.state.markdown} id="editor"/>*/}
+        <Container>
+          <Form.Group>
+            <Badge variant="warning">Editor</Badge>
+            <Form.Control as="textarea" onChange={this.updatePreviewer} value={this.state.markdown} rows="10" id="editor" />
+          </Form.Group>
+
+          <Badge variant="success">Previewer</Badge>
+          <Card bg="light">
+            <Card.Body id="preview">{ReactHtmlParser(marked(this.state.markdown))}</Card.Body>
+          </Card>
+
+          <footer className="d-flex flex-column align-items-center p-2">
+           <div className="py-1">
+             developed by <a target="blank" href="http://github.com/snrelghgub" id="github-link">Taizy</a>
+           </div>
+          </footer>
+
+        </Container>
+        {/*<Badge variant="success">Previewer</Badge>
        <div id="preview">{ReactHtmlParser(marked(this.state.markdown))}</div>*/}
-     </div>
+      </div>
     );
   }
 }
@@ -54,7 +69,7 @@ class App extends React.Component {
 
 
 const placeholder = 
-`# Welcome to my Markdown-Previewer! (level A heading) 
+`# The Online Markdown Previewer! (level A heading) 
 
 ## This is a (level B heading) ...
 ### And here's (level C heading) 
