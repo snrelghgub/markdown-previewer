@@ -8,7 +8,6 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-//import { faMarkdown } from '@fortawesome/free-brands-svg-icons';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 //reference instance 
@@ -39,7 +38,6 @@ class App extends React.Component {
               <FontAwesomeIcon icon={faCog} className="fa fa-spin ml-2 mr-2" id="icon"></FontAwesomeIcon>
         </Navbar>
 
-        {/*<textarea className="form-control" onChange={this.updatePreviewer} value={this.state.markdown} id="editor"/>*/}
         <Container>
           <Form.Group className="mt-1">
             <Badge variant="warning">Editor</Badge>
@@ -58,8 +56,6 @@ class App extends React.Component {
           </footer>
 
         </Container>
-        {/*<Badge variant="success">Previewer</Badge>
-       <div id="preview">{ReactHtmlParser(marked(this.state.markdown))}</div>*/}
       </div>
     );
   }
