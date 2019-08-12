@@ -1,6 +1,11 @@
 import React from 'react';
 import './App.css';
 import ReactHtmlParser from 'react-html-parser';
+import 'bootstrap/dist/css/bootstrap.css';
+import Badge from 'react-bootstrap/Badge';
+import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card'; 
+import Container from 'react-bootstrap/Container';
 
 //reference instance 
 let marked = require('marked'); 
@@ -24,12 +29,28 @@ class App extends React.Component {
   render() {
     return (
      <div className="App" id="markdown-previewer">
-       <textarea onChange={this.updatePreviewer} value={this.state.markdown} row="100" cols="100" id="editor"/>
-       <div id="preview">{ReactHtmlParser(marked(this.state.markdown))}</div>
+       
+       {/*<textarea className="form-control" onChange={this.updatePreviewer} value={this.state.markdown} id="editor"/>*/}
+      <Container>
+       <Form.Group>
+        <Form.Label><Badge variant="warning">Editor</Badge></Form.Label>
+        <Form.Control as="textarea" onChange={this.updatePreviewer} value={this.state.markdown} rows="10" id="editor" />
+       </Form.Group>
+
+       
+        <Badge variant="success">Previewer</Badge>
+        <Card>
+         <Card.Body id="preview">{ReactHtmlParser(marked(this.state.markdown))}</Card.Body>
+        </Card>
+      </Container>
+       {/*<Badge variant="success">Previewer</Badge>
+       <div id="preview">{ReactHtmlParser(marked(this.state.markdown))}</div>*/}
      </div>
     );
   }
 }
+
+
 
 
 const placeholder = 
