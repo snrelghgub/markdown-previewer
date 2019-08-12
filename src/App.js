@@ -41,7 +41,7 @@ class App extends React.Component {
 
         {/*<textarea className="form-control" onChange={this.updatePreviewer} value={this.state.markdown} id="editor"/>*/}
         <Container>
-          <Form.Group>
+          <Form.Group className="mt-1">
             <Badge variant="warning">Editor</Badge>
             <Form.Control as="textarea" onChange={this.updatePreviewer} value={this.state.markdown} rows="10" id="editor" />
           </Form.Group>
@@ -113,7 +113,7 @@ And here. | Okay. | I think we get it.
 - Even if you use dashes or asterisks.
 * And last but not least, let's not forget embedded images:
 
-![Cool Pic](https://www.use.com/images/s_4/cc19b1639769075715d1.jpg)`
+![Cool Pic](https://i.ibb.co/s3X816S/pic-sm.png)`
 
 
 export default App;
