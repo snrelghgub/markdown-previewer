@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ReactHtmlParser from 'react-html-parser';
 
 //reference instance 
 let marked = require('marked'); 
@@ -24,7 +25,7 @@ class App extends React.Component {
     return (
      <div className="App" id="markdown-previewer">
        <textarea onChange={this.updatePreviewer} value={this.state.markdown} row="100" cols="100" id="editor"/>
-       <p id="preview">{marked(this.state.markdown)}</p>
+       <p id="preview">{ReactHtmlParser(marked(this.state.markdown))}</p>
      </div>
     );
   }
