@@ -13,6 +13,12 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
 //reference instance 
 let marked = require('marked'); 
 
+//handle a elements to include target="_blank"
+const renderer = new marked.Renderer();
+renderer.link = (address = "#", title = "", content = "") => (
+   `<a target="_blank" href=${address} title=${title}>${content}</a>`
+);
+
 class App extends React.Component {
 	constructor(props){
 		super(props);
@@ -46,7 +52,7 @@ class App extends React.Component {
 
           <Badge variant="success">Previewer</Badge>
           <Card bg="light">
-            <Card.Body id="preview">{ReactHtmlParser(marked(this.state.markdown))}</Card.Body>
+            <Card.Body className="col-xs-12" id="preview">{ReactHtmlParser(marked(this.state.markdown, {renderer}))}</Card.Body>
           </Card>
 
           <footer className="d-flex flex-column align-items-center p-2">
@@ -60,7 +66,6 @@ class App extends React.Component {
     );
   }
 }
-
 
 
 
