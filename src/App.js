@@ -46,7 +46,7 @@ class App extends React.Component {
 
           <Badge variant="success">Previewer</Badge>
           <Card bg="light">
-            <Card.Body id="preview">{ReactHtmlParser(marked(this.state.markdown))}</Card.Body>
+            <Card.Body className="col-xs-12" id="preview">{ReactHtmlParser(marked(this.state.markdown))}</Card.Body>
           </Card>
 
           <footer className="d-flex flex-column align-items-center p-2">

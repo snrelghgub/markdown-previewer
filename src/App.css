@@ -1,3 +1,52 @@
 #github-link{
   text-decoration: none; 
 }
+
+#editor{
+  font-family: "Courier New"; 
+  font-size: smaller;
+  font-weight: bolder; 
+}
+
+img{
+  max-width: 200px; 
+}
+
+blockquote {
+  border-left: 3px solid #224B4B;
+  color: #224B4B;
+  padding-left: 5px;
+  margin-left: 25px;
+}
+
+code {
+  background: white;
+  padding: 1px 4px 2px 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+pre {
+  background: white;
+  padding: 5px 0 5px 5px;
+}
+
+h1 {
+  border-bottom: 2px solid;
+}
+
+h2 {
+  border-bottom: 1px solid;
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+td,
+th {
+  border: 2px solid;
+  padding-left: 5px;
+  padding-right: 5px; 
+}
